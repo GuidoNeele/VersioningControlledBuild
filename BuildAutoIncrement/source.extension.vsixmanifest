@@ -4,13 +4,13 @@
     <Identity Id="BuildAutoIncrement.Guido Neele.b394c446-99ca-4a88-9676-936057d9ebb1" Version="1.0" Language="en-US" Publisher="Guido Neele" />
     <DisplayName>Versioning Controlled Build</DisplayName>
     <Description xml:space="preserve">A Visual Studio add-in that automates versioning of .NET and VC++ projects</Description>
-    <MoreInfo>http://neele.name/vcb</MoreInfo>
+    <MoreInfo>http://neele.name/versioning-controlled-build</MoreInfo>
     <License>license.txt</License>
     <GettingStartedGuide>readme.txt</GettingStartedGuide>
     <ReleaseNotes>changelog.txt</ReleaseNotes>
     <Icon>Resources\Bitmap1t.bmp</Icon>
     <PreviewImage>Resources\Versioning Controlled Build.png</PreviewImage>
-    <Tags>Versioning, Versioning Manager, version control</Tags>
+    <Tags>Versioning, Versioning Manager, Version Control</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[14.0]" />
