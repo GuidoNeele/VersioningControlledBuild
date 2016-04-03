@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+  <Extern href="stdidcmd.h" />
+  <Extern href="vsshlids.h" />
+
+  <!--The Commands section is where commands, menus, and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidVcbCommandPackage">
+    <!-- Inside this section we have different sub-sections: one for the menus, another
+    for the menu groups, one for the buttons (the actual commands), one for the combos
+    and the last one for the bitmaps used. Each element is identified by a command id that
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually
+    called "command set" and is used to group different command inside a logically related
+    group; your package should define its own command set in order to avoid collisions
+    with command ids defined by other packages. -->
+
+    <Menus>
+      <Menu guid="guidVcbCommandSet" id="TopLevelMenu" priority="0xFFFF" type="Menu">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_MM_WINDOWHELP" />
+        <Strings>
+          <ButtonText>VCB</ButtonText>
+        </Strings>
+      </Menu>
+    </Menus>
+
+    <!-- In this section you can define new menu groups. A menu group is a container for
+         other menus or buttons (commands); from a visual point of view you can see the
+         group as the part of a menu contained between two lines. The parent of a group
+         must be a menu. -->
+    <Groups>
+      <Group guid="guidVcbCommandSet" id="TopLevelMenuGroup" priority="0x0600">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenu" />
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <Button guid="guidVcbCommandSet" id="GuiCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPicGui" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Versioning Controlled Build GUI</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVcbCommandSet" id="BuildVersionsCommandId" priority="0x0101" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPicBuild" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Build with Versions Updated</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVcbCommandSet" id="RebuildVersionsCommandId" priority="0x0102" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPicRebuild" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Rebuild with Versions Updated</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVcbCommandSet" id="SaveUpdatedVersionsCommandId" priority="0x0103" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPicSaveUpdated" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Save Updated Versions</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVcbCommandSet" id="SaveVersionsCommandId" priority="0x0104" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPicSave" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Export Versions to File...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVcbCommandSet" id="PrintVersionsCommandId" priority="0x0105" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPicPrint" />
+        <CommandFlag>DefaultInvisible</CommandFlag>
+        <CommandFlag>DynamicVisibility</CommandFlag>
+        <Strings>
+          <ButtonText>Print Versions</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVcbCommandSet" id="ConfigureCommandId" priority="0x0106" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Icon guid="guidImages" id="bmpPicConfigure" />
+        <Strings>
+          <ButtonText>Configure</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidVcbCommandSet" id="AboutCommandId" priority="0x0107" type="Button">
+        <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <Strings>
+          <ButtonText>About</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others:
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
+            inside a button definition. An important aspect of this declaration is that the element id
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidImages" href="Resources\GuiCommand.png" usedList="bmpPicGui, bmpPicBuild, bmpPicRebuild, bmpPicSaveUpdated, bmpPicSave, bmpPicPrint, bmpPicConfigure" />
+    </Bitmaps>
+
+  </Commands>
+
+  <VisibilityConstraints>
+    <VisibilityItem guid="guidVcbCommandSet" id="GuiCommandId" context="UICONTEXT_SolutionHasSingleProject" />
+    <VisibilityItem guid="guidVcbCommandSet" id="GuiCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="BuildVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
+    <VisibilityItem guid="guidVcbCommandSet" id="BuildVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="RebuildVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
+    <VisibilityItem guid="guidVcbCommandSet" id="RebuildVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="SaveUpdatedVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
+    <VisibilityItem guid="guidVcbCommandSet" id="SaveUpdatedVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="SaveVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
+    <VisibilityItem guid="guidVcbCommandSet" id="SaveVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="PrintVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
+    <VisibilityItem guid="guidVcbCommandSet" id="PrintVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+  </VisibilityConstraints>
+
+  <Symbols>
+
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidVcbCommandPackage" value="{69ed5368-af96-43e4-a44d-a0d32097a717}" />
+    <GuidSymbol name="guidVcbCommandSet" value="{2291da24-92e5-4ea4-bdb7-72a9b5ac7d59}">
+      <IDSymbol name="TopLevelMenu" value="0x0100" />
+      <IDSymbol name="TopLevelMenuGroup" value="0x0200" />
+      <IDSymbol name="GuiCommandId" value="0x0300" />
+      <IDSymbol name="BuildVersionsCommandId" value="0x0301" />
+      <IDSymbol name="RebuildVersionsCommandId" value="0x0302" />
+      <IDSymbol name="SaveUpdatedVersionsCommandId" value="0x0303" />
+      <IDSymbol name="SaveVersionsCommandId" value="0x0304" />
+      <IDSymbol name="PrintVersionsCommandId" value="0x0305" />
+      <IDSymbol name="ConfigureCommandId" value="0x0306" />
+      <IDSymbol name="AboutCommandId" value="0x0307" />
+    </GuidSymbol>
+
+    <!-- Other Guids for the package -->
+    <GuidSymbol name="guidImages" value="{7d45f4a0-6a92-45e6-9f30-77cde4426d1b}">
+      <IDSymbol name="bmpPicGui" value="1" />
+      <IDSymbol name="bmpPicBuild" value="2" />
+      <IDSymbol name="bmpPicRebuild" value="3" />
+      <IDSymbol name="bmpPicSaveUpdated" value="4" />
+      <IDSymbol name="bmpPicSave" value="5" />
+      <IDSymbol name="bmpPicPrint" value="6" />
+      <IDSymbol name="bmpPicConfigure" value="7" />
+    </GuidSymbol>
+
+  </Symbols>
+</CommandTable>

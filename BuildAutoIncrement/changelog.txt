@@ -1,0 +1,4 @@
+﻿Release Notes:
+
+1.0.0 2016-04-03:
+- Transformed the excellent Versioning Controlled Build Add-in from Julijan Sribar to be used in Visual Studio 2015.

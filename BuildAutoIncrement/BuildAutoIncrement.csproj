@@ -1,0 +1,467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.props" Condition="Exists('..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <UseCodebase>true</UseCodebase>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{F19E7F79-5C7D-4FE0-A4F2-12B663E2D3E3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BuildAutoIncrement</RootNamespace>
+    <AssemblyName>BuildAutoIncrement</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>true</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>true</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>false</CopyOutputSymbolsToOutputDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BaseCommand.cs" />
+    <Compile Include="BuildVersionsCommand.cs" />
+    <Compile Include="Configuration\ClickOnceOptions.cs" />
+    <Compile Include="Configuration\ColorsConfiguration.cs" />
+    <Compile Include="Configuration\ConfigurationPersister.cs" />
+    <Compile Include="Configuration\DisplayOptions.cs" />
+    <Compile Include="Configuration\ExportConfiguration.cs" />
+    <Compile Include="Configuration\FoldersConfiguration.cs" />
+    <Compile Include="Configuration\ListViewColumnWidths.cs" />
+    <Compile Include="Configuration\NumberingOptions.cs" />
+    <Compile Include="Configuration\SourceSafeOptions.cs" />
+    <Compile Include="Configuration\VcbCommandBarsConfiguration.cs" />
+    <Compile Include="Configuration\VcbCommandBarsConfigurationPersister.cs" />
+    <Compile Include="Configuration\VcbConfiguration.cs" />
+    <Compile Include="Configuration\VcbConfigurationSerializer.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Export\ListExporter.cs" />
+    <Compile Include="Export\ListExporterToCsvFile.cs" />
+    <Compile Include="Export\ListExporterToFile.cs" />
+    <Compile Include="Export\ListExporterToPlainTextFile.cs" />
+    <Compile Include="Export\ListExporterToTextFile.cs" />
+    <Compile Include="Export\ListPrinter.cs" />
+    <Compile Include="GuiCommand.cs" />
+    <Compile Include="AboutCommand.cs" />
+    <Compile Include="ConfigureCommand.cs" />
+    <Compile Include="PrintVersionsCommand.cs" />
+    <Compile Include="SaveVersionsCommand.cs" />
+    <Compile Include="SaveUpdatedVersionsCommand.cs" />
+    <Compile Include="RebuildVersionsCommand.cs" />
+    <Compile Include="VcbCommandPackage.cs" />
+    <Compile Include="Gui\FontDescription.cs" />
+    <Compile Include="Gui\FontSelectionUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\FontTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\CheckOutErrorDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\ColorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\ConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\ExceptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\NoUpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\OperationSuccesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\PromptUnsavedDocumentsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\RemoveConfigurationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\Forms\RemoveToolbarsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gui\LabelWithDivider.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\ProjectsListView\AssemblyInfoListViewsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\ProjectsListView\ProjectsListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\SpinButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\VcbExportOptionsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\VersionSelectUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Gui\VersionTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Gui\VersionUpDown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ProjectFilter.cs" />
+    <Compile Include="ProjectInfo.cs" />
+    <Compile Include="ProjectInfoList.cs" />
+    <Compile Include="ProjectTypeInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ResourceAccessor.cs" />
+    <Compile Include="SolutionBrowser.cs" />
+    <Compile Include="Util\AddInFileInstaller.cs" />
+    <Compile Include="Util\Exceptions.cs" />
+    <Compile Include="Util\FileUtil.cs" />
+    <Compile Include="Util\ImplementationAssemblyLoader.cs" />
+    <Compile Include="Util\InetRootLocator.cs" />
+    <Compile Include="Util\Installer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Util\Installer.Designer.cs">
+      <DependentUpon>Installer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\InvalidFileFilterCharacters.cs" />
+    <Compile Include="Util\MessageFilter.cs" />
+    <Compile Include="Util\PermanentUIRemover.cs" />
+    <Compile Include="Util\ProjectItemInfo.cs" />
+    <Compile Include="Util\ProjectsSortedArrayList.cs" />
+    <Compile Include="Util\SetupProjectsLoader.cs" />
+    <Compile Include="Util\SolutionExplorerSelector.cs" />
+    <Compile Include="Util\SourceSafeCheckout.cs" />
+    <Compile Include="Util\SourceSafeLocator.cs" />
+    <Compile Include="Util\UpdateSummary.cs" />
+    <Compile Include="Util\VisualStyles.cs" />
+    <Compile Include="Util\VssCheckout.cs" />
+    <Compile Include="Util\Win32Api.cs" />
+    <Compile Include="Util\WindowAdapter.cs" />
+    <Compile Include="Util\WoW64RegistryKey.cs" />
+    <Compile Include="VersionStreams\AssemblyInfoStream.cs" />
+    <Compile Include="VersionStreams\InstallShieldLEVersionStream.cs" />
+    <Compile Include="VersionStreams\ResourceFileStream.cs" />
+    <Compile Include="VersionStreams\SetupVersionStream.cs" />
+    <Compile Include="VersionStreams\VersionStream.cs" />
+    <Compile Include="VersionStreams\VersionStreamWGuid.cs" />
+    <Compile Include="Versions\AssemblyVersions.cs" />
+    <Compile Include="Versions\NewVersionProvider.cs" />
+    <Compile Include="Versions\ProjectVersion.cs" />
+    <Compile Include="VSSolutionBrowser.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
+    <None Include="packages.config" />
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="changelog.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="license.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <VSCTCompile Include="VcbCommandPackage.vsct">
+      <ResourceName>Menus.ctmenu</ResourceName>
+      <SubType>Designer</SubType>
+    </VSCTCompile>
+    <Content Include="readme.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\App.ico" />
+    <Content Include="Resources\Bitmap1t.bmp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <None Include="Resources\Bitmap2t.bmp" />
+    <None Include="Resources\Bitmap3t.bmp" />
+    <None Include="Resources\Bitmap4t.bmp" />
+    <None Include="Resources\Bitmap5t.bmp" />
+    <None Include="Resources\Bitmap6t.bmp" />
+    <None Include="Resources\Bitmap7t.bmp" />
+    <Content Include="Resources\CommandGUI.ico" />
+    <EmbeddedResource Include="Resources\CSharpProject.bmp" />
+    <Content Include="Resources\CSharpProject.ico" />
+    <Content Include="Resources\CSharpProjectLight.ico" />
+    <EmbeddedResource Include="Resources\DbProject.bmp" />
+    <Content Include="Resources\DbProject.ico" />
+    <Content Include="Resources\DbProjectLight.ico" />
+    <EmbeddedResource Include="Resources\eCSharpProject.bmp" />
+    <Content Include="Resources\eCSharpProject.ico" />
+    <Content Include="Resources\eCSharpProjectLight.ico" />
+    <EmbeddedResource Include="Resources\EnterpriseTemplate.bmp" />
+    <Content Include="Resources\EnterpriseTemplate.ico" />
+    <Content Include="Resources\EnterpriseTemplateLight.ico" />
+    <EmbeddedResource Include="Resources\eVBProject.bmp" />
+    <Content Include="Resources\eVBProject.ico" />
+    <Content Include="Resources\eVBProjectLight.ico" />
+    <EmbeddedResource Include="Resources\folder.bmp" />
+    <Content Include="Resources\folder.ico" />
+    <Content Include="Resources\folderLight.ico" />
+    <Content Include="Resources\FSharpProject.ico" />
+    <Content Include="Resources\FSharpProjectLight.ico" />
+    <Content Include="Resources\GuiCommand.png" />
+    <Content Include="Resources\GuiCommandPackage.ico" />
+    <Content Include="Resources\IconCommandGUI.ico" />
+    <Content Include="Resources\InstallShield.bmp" />
+    <Content Include="Resources\InstallShield.ico" />
+    <Content Include="Resources\InstallShieldLight.ico" />
+    <Content Include="Resources\IntelCppLight.ico" />
+    <Content Include="Resources\IntelCppProject.ico" />
+    <EmbeddedResource Include="Resources\SetupProject.bmp" />
+    <Content Include="Resources\SetupProject.ico" />
+    <Content Include="Resources\SetupProjectLight.ico" />
+    <EmbeddedResource Include="Resources\VBProject.bmp" />
+    <Content Include="Resources\VBProject.ico" />
+    <Content Include="Resources\VBProjectLight.ico" />
+    <Content Include="Resources\VCB.AddIn" />
+    <EmbeddedResource Include="Resources\VCProject.bmp" />
+    <Content Include="Resources\VCProject.ico" />
+    <Content Include="Resources\VCProjectLight.ico" />
+    <EmbeddedResource Include="Resources\VJSharpProject.bmp" />
+    <Content Include="Resources\Versioning Controlled Build.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\VJSharpProject.ico" />
+    <Content Include="Resources\VJSharpProjectLight.ico" />
+    <EmbeddedResource Include="Resources\webproject.bmp" />
+    <Content Include="Resources\webproject.ico" />
+    <Content Include="Resources\webprojectLight.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EnvDTE, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE100, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE80, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="EnvDTE90, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.CommandBars, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Imaging, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Imaging.14.1.24720\lib\net45\Microsoft.VisualStudio.Imaging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.OLE.Interop.7.10.6070\lib\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.14.0.14.1.24720\lib\Microsoft.VisualStudio.Shell.14.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Immutable.10.0.10.0.30319\lib\net40\Microsoft.VisualStudio.Shell.Immutable.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Immutable.11.0.11.0.50727\lib\net45\Microsoft.VisualStudio.Shell.Immutable.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Immutable.12.0.12.0.21003\lib\net45\Microsoft.VisualStudio.Shell.Immutable.12.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Immutable.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Immutable.14.0.14.1.24720\lib\net45\Microsoft.VisualStudio.Shell.Immutable.14.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.7.10.6071\lib\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.10.0.10.0.30319\lib\Microsoft.VisualStudio.Shell.Interop.10.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.11.0, Version=11.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.11.0.11.0.61030\lib\Microsoft.VisualStudio.Shell.Interop.11.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.12.0, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.12.0.12.0.30110\lib\Microsoft.VisualStudio.Shell.Interop.12.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.9.0, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.9.0.9.0.30729\lib\Microsoft.VisualStudio.Shell.Interop.9.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.7.10.6070\lib\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop.8.0, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.8.0.8.0.50727\lib\Microsoft.VisualStudio.TextManager.Interop.8.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Threading, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Threading.14.1.111\lib\net45\Microsoft.VisualStudio.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Utilities, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Utilities.14.1.24720\lib\net45\Microsoft.VisualStudio.Utilities.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Validation, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Validation.14.1.111\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MultiTabColorPicker">
+      <HintPath>..\Runtime\MultiTabColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gui\Forms\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\CheckOutErrorDialog.resx">
+      <DependentUpon>CheckOutErrorDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\ColorsForm.resx">
+      <DependentUpon>ColorsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\ConfigurationForm.resx">
+      <DependentUpon>ConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\ExceptionForm.resx">
+      <DependentUpon>ExceptionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\NoUpdateForm.resx">
+      <DependentUpon>NoUpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\OperationSuccesForm.resx">
+      <DependentUpon>OperationSuccesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\PromptUnsavedDocumentsDialog.resx">
+      <DependentUpon>PromptUnsavedDocumentsDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\RemoveConfigurationsForm.resx">
+      <DependentUpon>RemoveConfigurationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\Forms\RemoveToolbarsForm.resx">
+      <DependentUpon>RemoveToolbarsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\ProjectsListView\AssemblyInfoListViewsControl.resx">
+      <DependentUpon>AssemblyInfoListViewsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gui\ProjectsListView\ProjectsListView.resx">
+      <DependentUpon>ProjectsListView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Buttons.resx" />
+    <EmbeddedResource Include="Resources\Shared.resx" />
+    <EmbeddedResource Include="VSPackage.resx">
+      <MergeWithCTO>true</MergeWithCTO>
+      <ManifestResourceName>VSPackage</ManifestResourceName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.targets" Condition="Exists('..\packages\Microsoft.VSSDK.BuildTools.14.1.24720\build\Microsoft.VSSDK.BuildTools.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

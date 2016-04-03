@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="GUI ToolTip">
+		<value>Versioning Controlled Build GUI</value>
+	</data>
+	<data name="Error starting VCB">
+		<value>Error starting Versioning Controlled Build add-in</value>
+	</data>
+	<data name="Build with Updated Versions menu caption">
+		<value>&amp;Build with Versions Updated</value>
+	</data>
+	<data name="Rebuild with Updated Versions menu caption">
+		<value>&amp;Rebuild with Versions Updated</value>
+	</data>
+	<data name="Build solution toolTip">
+		<value>Build Solution with Updated Versions</value>
+	</data>
+	<data name="Rebuild solution toolTip">
+		<value>Rebuild Solution with Updated Versions</value>
+	</data>
+	<data name="Save Updated Versions menu caption">
+		<value>Save &amp;Updated Versions</value>
+	</data>
+	<data name="Update versions toolTip">
+		<value>Update Versions</value>
+	</data>
+	<data name="Must restart VS IDE">
+		<value>You must restart VS IDE to make changes effective.</value>
+	</data>
+	<data name="Title">
+		<value>Solution Versions</value>
+	</data>
+	<data name="Settings menu">
+		<value>&amp;Settings...</value>
+	</data>
+	<data name="About menu">
+		<value>&amp;About...</value>
+	</data>
+	<data name="Save Error">
+		<value>Save Error</value>
+	</data>
+	<data name="Cannot save file">
+		<value>Cannot save file:</value>
+	</data>
+	<data name="Check permissions">
+		<value>Check permissions and security settings.</value>
+	</data>
+	<data name="Higher version warning">
+		<value>One or more selected project(s) have already higher version than one to be applied.</value>
+	</data>
+	<data name="Are you sure to continue">
+		<value>Are you sure to continue?</value>
+	</data>
+	<data name="Cannot save configuration file">
+		<value>Cannot save configuration file:</value>
+	</data>
+	<data name="Error title">
+		<value>Versioning Controlled Build Error</value>
+	</data>
+	<data name="Empty">
+		<value>[Blank]</value>
+	</data>
+	<data name="Version not found">
+		<value>&lt;not found&gt;</value>
+	</data>
+	<data name="AssemblyInfo file not found in project">
+		<value>&lt;Version file not found&gt; </value>
+	</data>
+	<data name="Versions successfully updated">
+		<value>Versions successfully updated</value>
+	</data>
+	<data name="Version must not contain negative integers">
+		<value>Version must not contain negative integers.</value>
+	</data>
+	<data name="Version may consist of non-negative integers or a single asterisk character">
+		<value>Version may consist of non-negative integers or a single asterisk character only.</value>
+	</data>
+	<data name="Version must consist of at least N components">
+		<value>Version must consist of at least {0} dot-separated components.</value>
+	</data>
+	<data name="Invalid version string">
+		<value>String [{0}] is not a valid version. {1}</value>
+	</data>
+	<data name="Invalid version pattern">
+		<value>Invalid version pattern [{0}]</value>
+	</data>
+	<data name="Version format error">
+		<value>Version format error</value>
+	</data>
+	<data name="Asterisk may appear only at the end of version string">
+		<value>'*' may appear only at the end of version string and it must be a single.</value>
+	</data>
+	<data name="Version must not end with dot">
+		<value>Version must not end with a dot character.</value>
+	</data>
+	<data name="Invalid version">
+		<value>&lt;invalid&gt;</value>
+	</data>
+	<data name="Version may consist of non-negative integers">
+		<value>Version may consist of non-negative integers only.</value>
+	</data>
+	<data name="Asterisk not allowed">
+		<value>Version may not contain '*' character.</value>
+	</data>
+	<data name="Version must consist of at most N components">
+		<value>Version must consist of at most {0} dot-separated components.</value>
+	</data>
+	<data name="File filter cannot contain any of the characters">
+		<value>File filter cannot contain any of the following characters:</value>
+	</data>
+	<data name="GUI menu caption">
+		<value>&amp;GUI...</value>
+	</data>
+	<data name="Configure menu caption">
+		<value>&amp;Settings...</value>
+	</data>
+	<data name="Configure toolTip">
+		<value>Configure VCB</value>
+	</data>
+	<data name="About menu caption">
+		<value>&amp;About Versioning Controlled Build</value>
+	</data>
+	<data name="About toolTip">
+		<value>About Versioning Controlled Build</value>
+	</data>
+	<data name="SoursceSafe exe Filter">
+		<value>Source Safe Executable|ss.exe</value>
+	</data>
+	<data name="Select SourceSafe Folder caption">
+		<value>Select SourceSafe Root Folder</value>
+	</data>
+	<data name="Select IIS Root description">
+		<value>Select root folder of IIS projects</value>
+	</data>
+	<data name="Version overflow occured for projects">
+		<value>Version overflow for '{0}' in project(s): {1}</value>
+	</data>
+	<data name="Failed to load configuration file">
+		<value>Failed to load settings from configuration file.</value>
+	</data>
+	<data name="Using default configuration">
+		<value>Default settings will be used.</value>
+	</data>
+	<data name="Version must be smaller than">
+		<value>Version must contain integers smaller than {0}</value>
+	</data>
+	<data name="Print Versions menu caption">
+		<value>&amp;Print Versions...</value>
+	</data>
+	<data name="Export Versions menu caption">
+		<value>E&amp;xport Versions to File...</value>
+	</data>
+	<data name="Print versions toolTip">
+		<value>Print Versions</value>
+	</data>
+	<data name="Export versions toolTip">
+		<value>Export Versions</value>
+	</data>
+</root>
