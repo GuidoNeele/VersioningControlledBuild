@@ -27,95 +27,105 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 
-namespace BuildAutoIncrement {
-	/// <summary>
-	///     Defines interface for classes responsible to check out version 
-	///     files.
-	/// </summary>
-	public interface ISourceSafeCheckout {
+namespace BuildAutoIncrement
+{
+  /// <summary>
+  ///     Defines interface for classes responsible to check out version 
+  ///     files.
+  /// </summary>
+  public interface ISourceSafeCheckout
+  {
 
-        /// <summary>
-        ///   Checks out version files for an array of <c>ProjectInfo</c> 
-        ///   objects provided.
-        /// </summary>
-        /// <param name="projectInfos">
-        ///   An array of <c>ProjectInfo</c> objects to check out.
-        /// </param>
-        void CheckOut(ProjectInfo[] projectInfos);
+    /// <summary>
+    ///   Checks out version files for an array of <c>ProjectInfo</c> 
+    ///   objects provided.
+    /// </summary>
+    /// <param name="projectInfos">
+    ///   An array of <c>ProjectInfo</c> objects to check out.
+    /// </param>
+    void CheckOut(ProjectInfo[] projectInfos);
 
-        /// <summary>
-        ///   Gets array of filenames checked out succesfully.
-        /// </summary>
-        string[] FilesCheckedOut { get; }
+    /// <summary>
+    ///   Gets array of filenames checked out succesfully.
+    /// </summary>
+    string[] FilesCheckedOut { get; }
 
-        /// <summary>
-        ///   Gets array of <c>ProjectInfo</c> objects failed to check out.
-        /// </summary>
-        ProjectInfo[] ProjectInfosFailedToCheckOut { get; }
+    /// <summary>
+    ///   Gets array of <c>ProjectInfo</c> objects failed to check out.
+    /// </summary>
+    ProjectInfo[] ProjectInfosFailedToCheckOut { get; }
 
-        /// <summary>
-        ///   Gets array of filenames failed to check out.
-        /// </summary>
-        string[] FilesFailedToCheckOut { get; }
+    /// <summary>
+    ///   Gets array of filenames failed to check out.
+    /// </summary>
+    string[] FilesFailedToCheckOut { get; }
 
+  }
+
+  /// <summary>
+  ///   Abstract base class for classes responsible to check out version 
+  ///   files.
+  /// </summary>
+  public abstract class SourceSafeCheckout : ISourceSafeCheckout
+  {
+
+    /// <summary>
+    ///   Creates <c>SourceSafeControl</c> object.
+    /// </summary>
+    protected SourceSafeCheckout()
+    {
+      m_filesCheckedOut = new ArrayList();
+      m_projectInfosFailedToCheckOut = new ArrayList();
+      m_filesFailedToCheckOut = new ArrayList();
+    }
+
+    #region ISourceSafeCheckout implementation
+
+    public abstract void CheckOut(ProjectInfo[] projectInfos);
+
+    /// <summary>
+    ///   Gets an array of filenames checked out succesfully.
+    /// </summary>
+    public string[] FilesCheckedOut
+    {
+      get
+      {
+        Debug.Assert(m_filesCheckedOut != null);
+        return (string[])m_filesCheckedOut.ToArray(typeof(string));
+      }
     }
 
     /// <summary>
-    ///   Abstract base class for classes responsible to check out version 
-    ///   files.
+    ///   Gets an array of <c>ProjectInfo</c> objects that failed to check 
+    ///   out.
     /// </summary>
-    public abstract class SourceSafeCheckout : ISourceSafeCheckout {
-
-        /// <summary>
-        ///   Creates <c>SourceSafeControl</c> object.
-        /// </summary>
-        protected SourceSafeCheckout() {
-            m_filesCheckedOut = new ArrayList();
-            m_projectInfosFailedToCheckOut = new ArrayList();
-            m_filesFailedToCheckOut = new ArrayList();
-        }
-
-        #region ISourceSafeCheckout implementation
-
-        public abstract void CheckOut(ProjectInfo[] projectInfos);
-
-        /// <summary>
-        ///   Gets an array of filenames checked out succesfully.
-        /// </summary>
-        public string[] FilesCheckedOut {
-            get {
-                Debug.Assert(m_filesCheckedOut != null);
-                return (string[])m_filesCheckedOut.ToArray(typeof(string));
-            }
-        }
-
-        /// <summary>
-        ///   Gets an array of <c>ProjectInfo</c> objects that failed to check 
-        ///   out.
-        /// </summary>
-        public ProjectInfo[] ProjectInfosFailedToCheckOut {
-            get {
-                Debug.Assert(m_projectInfosFailedToCheckOut != null);
-                return (ProjectInfo[])m_projectInfosFailedToCheckOut.ToArray(typeof(ProjectInfo));
-            }
-        }
-
-        /// <summary>
-        ///   Gets an array of filenames that failed to check out.
-        /// </summary>
-        public string[] FilesFailedToCheckOut {
-            get {
-                Debug.Assert(m_filesFailedToCheckOut != null);
-                return (string[])m_filesFailedToCheckOut.ToArray(typeof(string));
-            }
-        }
-
-        #endregion // ISourceSafeCheckout implementation
-
-        protected ArrayList m_filesCheckedOut;
-
-        protected ArrayList m_projectInfosFailedToCheckOut;
-
-        protected ArrayList m_filesFailedToCheckOut;
+    public ProjectInfo[] ProjectInfosFailedToCheckOut
+    {
+      get
+      {
+        Debug.Assert(m_projectInfosFailedToCheckOut != null);
+        return (ProjectInfo[])m_projectInfosFailedToCheckOut.ToArray(typeof(ProjectInfo));
+      }
     }
+
+    /// <summary>
+    ///   Gets an array of filenames that failed to check out.
+    /// </summary>
+    public string[] FilesFailedToCheckOut
+    {
+      get
+      {
+        Debug.Assert(m_filesFailedToCheckOut != null);
+        return (string[])m_filesFailedToCheckOut.ToArray(typeof(string));
+      }
+    }
+
+    #endregion // ISourceSafeCheckout implementation
+
+    protected ArrayList m_filesCheckedOut;
+
+    protected ArrayList m_projectInfosFailedToCheckOut;
+
+    protected ArrayList m_filesFailedToCheckOut;
+  }
 }

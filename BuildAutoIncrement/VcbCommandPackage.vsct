@@ -51,7 +51,7 @@
       <Button guid="guidVcbCommandSet" id="GuiCommandId" priority="0x0100" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
         <Icon guid="guidImages" id="bmpPicGui" />
-        <CommandFlag>DefaultInvisible</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Versioning Controlled Build GUI</ButtonText>
@@ -60,7 +60,7 @@
       <Button guid="guidVcbCommandSet" id="BuildVersionsCommandId" priority="0x0101" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
         <Icon guid="guidImages" id="bmpPicBuild" />
-        <CommandFlag>DefaultInvisible</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Build with Versions Updated</ButtonText>
@@ -69,7 +69,7 @@
       <Button guid="guidVcbCommandSet" id="RebuildVersionsCommandId" priority="0x0102" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
         <Icon guid="guidImages" id="bmpPicRebuild" />
-        <CommandFlag>DefaultInvisible</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Rebuild with Versions Updated</ButtonText>
@@ -78,7 +78,7 @@
       <Button guid="guidVcbCommandSet" id="SaveUpdatedVersionsCommandId" priority="0x0103" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
         <Icon guid="guidImages" id="bmpPicSaveUpdated" />
-        <CommandFlag>DefaultInvisible</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Save Updated Versions</ButtonText>
@@ -87,7 +87,7 @@
       <Button guid="guidVcbCommandSet" id="SaveVersionsCommandId" priority="0x0104" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
         <Icon guid="guidImages" id="bmpPicSave" />
-        <CommandFlag>DefaultInvisible</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Export Versions to File...</ButtonText>
@@ -96,7 +96,7 @@
       <Button guid="guidVcbCommandSet" id="PrintVersionsCommandId" priority="0x0105" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
         <Icon guid="guidImages" id="bmpPicPrint" />
-        <CommandFlag>DefaultInvisible</CommandFlag>
+        <!--<CommandFlag>DefaultInvisible</CommandFlag>-->
         <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Print Versions</ButtonText>
@@ -105,12 +105,14 @@
       <Button guid="guidVcbCommandSet" id="ConfigureCommandId" priority="0x0106" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
         <Icon guid="guidImages" id="bmpPicConfigure" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>Configure</ButtonText>
         </Strings>
       </Button>
       <Button guid="guidVcbCommandSet" id="AboutCommandId" priority="0x0107" type="Button">
         <Parent guid="guidVcbCommandSet" id="TopLevelMenuGroup" />
+        <CommandFlag>DynamicVisibility</CommandFlag>
         <Strings>
           <ButtonText>About</ButtonText>
         </Strings>

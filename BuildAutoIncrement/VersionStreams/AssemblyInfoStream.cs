@@ -31,10 +31,10 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 
 namespace BuildAutoIncrement {
-	/// <summary>
-	///   Class for reading and writing assembly versions from assembly info files.
-	/// </summary>
-	public class AssemblyInfoStream : VersionStream {
+  /// <summary>
+  ///   Class for reading and writing assembly versions from assembly info files.
+  /// </summary>
+  public class AssemblyInfoStream : VersionStream {
 
         #region VersionPatternProvider
         /// <summary>

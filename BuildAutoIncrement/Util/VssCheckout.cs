@@ -32,9 +32,9 @@ using System.Windows.Forms;
 using EnvDTE80;
 
 namespace BuildAutoIncrement {
-	/// <summary>
-	///     Helper object used to checkout items.
-	/// </summary>
+  /// <summary>
+  ///     Helper object used to checkout items.
+  /// </summary>
     public class VSSCheckout : SourceSafeCheckout {
 
         /// <summary>
