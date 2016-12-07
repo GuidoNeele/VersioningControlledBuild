@@ -28,10 +28,10 @@ using System.Collections;
 using System.Diagnostics;
 
 namespace BuildAutoIncrement {
-	/// <summary>
-	///   Interface implemented by solution browsers.
-	/// </summary>
-	public interface ISolutionBrowser : IDisposable {
+  /// <summary>
+  ///   Interface implemented by solution browsers.
+  /// </summary>
+  public interface ISolutionBrowser : IDisposable {
 
         /// <summary>
         ///   Gets active solution name.
@@ -83,7 +83,7 @@ namespace BuildAutoIncrement {
         /// </summary>
         void SaveVersions();
 
-	}
+  }
 
     /// <summary>
     ///   Base class for all solution browsers. Implements <c>ISolutionBrowser</c>

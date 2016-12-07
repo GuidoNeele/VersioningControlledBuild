@@ -134,16 +134,22 @@
   <VisibilityConstraints>
     <VisibilityItem guid="guidVcbCommandSet" id="GuiCommandId" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidVcbCommandSet" id="GuiCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="GuiCommandId" context="UICONTEXT_SolutionBuilding" />
     <VisibilityItem guid="guidVcbCommandSet" id="BuildVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidVcbCommandSet" id="BuildVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="BuildVersionsCommandId" context="UICONTEXT_SolutionBuilding" />
     <VisibilityItem guid="guidVcbCommandSet" id="RebuildVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidVcbCommandSet" id="RebuildVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="RebuildVersionsCommandId" context="UICONTEXT_SolutionBuilding" />
     <VisibilityItem guid="guidVcbCommandSet" id="SaveUpdatedVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidVcbCommandSet" id="SaveUpdatedVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="SaveUpdatedVersionsCommandId" context="UICONTEXT_SolutionBuilding" />
     <VisibilityItem guid="guidVcbCommandSet" id="SaveVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidVcbCommandSet" id="SaveVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="SaveVersionsCommandId" context="UICONTEXT_SolutionBuilding" />
     <VisibilityItem guid="guidVcbCommandSet" id="PrintVersionsCommandId" context="UICONTEXT_SolutionHasSingleProject" />
     <VisibilityItem guid="guidVcbCommandSet" id="PrintVersionsCommandId" context="UICONTEXT_SolutionHasMultipleProjects" />
+    <VisibilityItem guid="guidVcbCommandSet" id="PrintVersionsCommandId" context="UICONTEXT_SolutionBuilding" />
   </VisibilityConstraints>
 
   <Symbols>

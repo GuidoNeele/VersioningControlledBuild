@@ -148,7 +148,7 @@ namespace BuildAutoIncrement
       Debug.Assert(m_devEnvApplicationObject != null);
       Debug.Assert(configuration != null);
 
-      m_solutionBrowser = new VSSolutionBrowser(m_devEnvApplicationObject, configuration);
+      m_solutionBrowser = new VSSolutionBrowser(m_devEnvApplicationObject, configuration, this.ServiceProvider);
       IProjectFilter projectFilter = new ProjectFilterByType(configuration.NumberingOptions.IncludeSetupProjects, configuration.DisplayOptions.ShowNonVersionableProjects, configuration.DisplayOptions.ShowSubProjectRoot, configuration.DisplayOptions.ShowEnterpriseTemplateProjectRoot);
       m_solutionBrowser.ApplyFilter(projectFilter);
       Debug.Assert(m_solutionBrowser != null);

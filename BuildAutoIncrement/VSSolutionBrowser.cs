@@ -69,14 +69,14 @@ namespace BuildAutoIncrement
     /// <param name="devEnvApplicationObject">
     ///   Development environment from which application is started.
     /// </param>
-    public VSSolutionBrowser(DTE devEnvApplicationObject, VcbConfiguration configuration)
+    public VSSolutionBrowser(DTE devEnvApplicationObject, VcbConfiguration configuration, IServiceProvider package)
         : base(configuration)
     {
       MessageFilter.Register();
       Debug.Assert(devEnvApplicationObject != null);
       m_devEnvApplicationObject = devEnvApplicationObject;
       PreProcess();
-      m_sourceSafeCheckOut = new VSSCheckout(m_devEnvApplicationObject);
+      m_sourceSafeCheckOut = new VSSCheckout(m_devEnvApplicationObject, package);
       LoadProjectsInfo();
     }
 

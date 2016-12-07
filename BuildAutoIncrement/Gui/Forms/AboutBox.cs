@@ -35,10 +35,10 @@ using System.Windows.Forms;
 using System.Globalization;
 
 namespace BuildAutoIncrement {
-	/// <summary>
-	///   Displays information related to tool and runtime environment.
-	/// </summary>
-	public class AboutBox : System.Windows.Forms.Form {
+  /// <summary>
+  ///   Displays information related to tool and runtime environment.
+  /// </summary>
+  public class AboutBox : System.Windows.Forms.Form {
 
         #region Controls
         private System.Windows.Forms.Label m_labelFrameworkVersion;
@@ -50,9 +50,9 @@ namespace BuildAutoIncrement {
         #endregion // Controls
 
         /// <summary>
-		/// Required designer variable.
-		/// </summary>
-		private System.ComponentModel.Container components = null;
+    /// Required designer variable.
+    /// </summary>
+    private System.ComponentModel.Container components = null;
 
         #region Constructors
 
@@ -70,26 +70,26 @@ namespace BuildAutoIncrement {
         #region Overrides
 
         /// <summary>
-		/// Clean up any resources being used.
-		/// </summary>
-		protected override void Dispose(bool disposing) {
-			if (disposing) {
-				if (components != null) {
-					components.Dispose();
-				}
-			}
-			base.Dispose(disposing);
-		}
+    /// Clean up any resources being used.
+    /// </summary>
+    protected override void Dispose(bool disposing) {
+      if (disposing) {
+        if (components != null) {
+          components.Dispose();
+        }
+      }
+      base.Dispose(disposing);
+    }
 
         #endregion // Overrides
 
-		#region Windows Form Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
+    #region Windows Form Designer generated code
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
       this.m_labelFrameworkVersion = new System.Windows.Forms.Label();
       this.m_labelCopyright = new System.Windows.Forms.Label();
       this.m_labelApplicationName = new System.Windows.Forms.Label();
@@ -181,7 +181,7 @@ namespace BuildAutoIncrement {
       this.PerformLayout();
 
         }
-		#endregion
+    #endregion
 
         #region Private methods
 
