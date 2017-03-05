@@ -1,4 +1,16 @@
 ﻿Release Notes:
 
-1.0.0 2016-04-03:
+V1.0.0 2016-04-03:
 - Transformed the excellent Versioning Controlled Build Add-in from Julijan Sribar to be used in Visual Studio 2015.
+
+V1.0.0.2
+- Bug fix. Buttons used to disappear when one of the command buttons was clicked.
+
+V1.1.0
+- Added an extra way to try and checkout files via the Visual Studio Shell Interop. This should checkout files without showing a dialog.
+
+V1.2.0 2017-03-01
+- VS 2017 support
+
+V1.2.1 2017-03-05
+- I accidentally removed VS 2015 support in the previous build. Turned out it was more difficult to support both in one package than I thought. Eventually it all worked out. So this version supports both VS2015 and VS2017.
