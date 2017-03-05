@@ -34,60 +34,54 @@ using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
 
-namespace BuildAutoIncrement
-{
+namespace BuildAutoIncrement {
   /// <summary>
   ///   Displays information related to tool and runtime environment.
   /// </summary>
-  public class AboutBox : System.Windows.Forms.Form
-  {
+  public class AboutBox : System.Windows.Forms.Form {
 
-    #region Controls
-    private System.Windows.Forms.Label m_labelFrameworkVersion;
-    private System.Windows.Forms.Label m_labelCopyright;
-    private System.Windows.Forms.Label m_labelApplicationName;
-    private System.Windows.Forms.Button m_buttonOK;
-    private System.Windows.Forms.Label m_labelVersion;
-    private System.Windows.Forms.LinkLabel m_linkLabel;
-    #endregion // Controls
+        #region Controls
+        private System.Windows.Forms.Label m_labelFrameworkVersion;
+        private System.Windows.Forms.Label m_labelCopyright;
+        private System.Windows.Forms.Label m_labelApplicationName;
+        private System.Windows.Forms.Button m_buttonOK;
+        private System.Windows.Forms.Label m_labelVersion;
+        private System.Windows.Forms.LinkLabel m_linkLabel;
+        #endregion // Controls
 
-    /// <summary>
+        /// <summary>
     /// Required designer variable.
     /// </summary>
     private System.ComponentModel.Container components = null;
 
-    #region Constructors
+        #region Constructors
 
-    private AboutBox()
-    {
-      InitializeComponent();
+        private AboutBox() {
+            InitializeComponent();
+            
+            m_labelFrameworkVersion.Text = String.Format(CultureInfo.CurrentCulture, ".NET Framework: {0}", Environment.Version.ToString());
 
-      m_labelFrameworkVersion.Text = String.Format(CultureInfo.CurrentCulture, ".NET Framework: {0}", Environment.Version.ToString());
+            Version version = Assembly.LoadFrom(GetImplementationAssembly()).GetName().Version;
+            m_labelVersion.Text = version.ToString();
+        }
 
-      Version version = Assembly.LoadFrom(GetImplementationAssembly()).GetName().Version;
-      m_labelVersion.Text = version.ToString();
-    }
+        #endregion // Constructors
 
-    #endregion // Constructors
+        #region Overrides
 
-    #region Overrides
-
-    /// <summary>
+        /// <summary>
     /// Clean up any resources being used.
     /// </summary>
-    protected override void Dispose(bool disposing)
-    {
-      if (disposing)
-      {
-        if (components != null)
-        {
+    protected override void Dispose(bool disposing) {
+      if (disposing) {
+        if (components != null) {
           components.Dispose();
         }
       }
       base.Dispose(disposing);
     }
 
-    #endregion // Overrides
+        #endregion // Overrides
 
     #region Windows Form Designer generated code
     /// <summary>
@@ -186,34 +180,33 @@ namespace BuildAutoIncrement
       this.ResumeLayout(false);
       this.PerformLayout();
 
-    }
+        }
     #endregion
 
-    #region Private methods
+        #region Private methods
 
-    /// <summary>
-    ///   Opens link in browser.
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void m_linkLabel_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
-    {
-      LinkLabel ll = sender as LinkLabel;
-      Debug.Assert(ll != null);
-      System.Diagnostics.Process.Start(ll.Text);
-    }
+        /// <summary>
+        ///   Opens link in browser.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void m_linkLabel_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e) {
+            LinkLabel ll = sender as LinkLabel;
+            Debug.Assert(ll != null);
+            System.Diagnostics.Process.Start(ll.Text);
+        }
 
-    private string GetImplementationAssembly()
-    {
-      foreach (Assembly currentassembly in AppDomain.CurrentDomain.GetAssemblies())
-      {
-        Type t = currentassembly.GetType("BuildAutoIncrement.VcbCommandPackage");
-        if (t != null)
-          return currentassembly.Location;
-      }
-      Debug.Assert(false, "No implementation file found");
-      return string.Empty;
-    }
+        private string GetImplementationAssembly()
+        {
+            foreach (Assembly currentassembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                Type t = currentassembly.GetType("BuildAutoIncrement.VcbCommandPackage");
+                if (t != null)
+                    return currentassembly.Location;
+            }
+            Debug.Assert(false, "No implementation file found");
+            return string.Empty;
+        }
 
     #endregion // Private methods
 
@@ -221,12 +214,10 @@ namespace BuildAutoIncrement
     public static DialogResult Show(IWin32Window owner)
     {
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
-      AboutBox ab = new AboutBox()
-      {
-        StartPosition = FormStartPosition.CenterParent
-      };
-      return ab.ShowDialog(owner);
-    }
+      AboutBox ab = new AboutBox();
+            ab.StartPosition = FormStartPosition.CenterParent;
+            return ab.ShowDialog(owner);
+        }
 
-  }
+    }
 }

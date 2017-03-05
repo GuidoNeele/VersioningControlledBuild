@@ -146,7 +146,7 @@ namespace BuildAutoIncrement {
                     command.Delete();
                 }
             }
-            catch (Exception) {
+            catch (Exception e) {
                 Trace.WriteLine(string.Format("Command {0} not found.", commandName));
             }
         }

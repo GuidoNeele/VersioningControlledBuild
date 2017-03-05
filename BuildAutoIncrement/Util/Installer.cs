@@ -309,7 +309,7 @@ namespace BuildAutoIncrement
         Debug.Assert(mi != null && mi.IsStatic);
         mi.Invoke(null, new object[] { devEnvironmentVersion.ProgId });
       }
-      catch (Exception)
+      catch (Exception e)
       {
 #if DEBUG_SETUP
                 ExceptionForm.Show(e, devEnvironmentVersion.ProgId);
