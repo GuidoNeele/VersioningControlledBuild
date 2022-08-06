@@ -212,7 +212,7 @@ namespace BuildAutoIncrement
         {
           Console.WriteLine(e.ToString());
 #if DEBUG
-                    ExceptionForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd), e, "VCB Error");
+                    ExceptionForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()), e, "VCB Error");
 #endif
         }
       }
@@ -284,7 +284,7 @@ namespace BuildAutoIncrement
       }
       catch (Exception e)
       {
-        ExceptionForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd), e, "Browsing Solution Error");
+        ExceptionForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()), e, "Browsing Solution Error");
       }
     }
 
@@ -645,7 +645,7 @@ namespace BuildAutoIncrement
       }
       if (unsavedDocuments.Count > 0)
       {
-        if (PromptUnsavedDocumentsDialog.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd), unsavedDocuments) == System.Windows.Forms.DialogResult.Cancel)
+        if (PromptUnsavedDocumentsDialog.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()), unsavedDocuments) == System.Windows.Forms.DialogResult.Cancel)
         {
           throw new UserCancelledException();
         }
