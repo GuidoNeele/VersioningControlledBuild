@@ -300,7 +300,6 @@
     <Content Include="Resources\webprojectLight.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MultiTabColorPicker">
       <HintPath>..\Runtime\MultiTabColorPicker.dll</HintPath>
