@@ -64,7 +64,7 @@ namespace BuildAutoIncrement
 #if DEBUG
         mainForm.ShowInTaskbar = true;
 #endif
-        WindowAdapter wa = new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd);
+        WindowAdapter wa = new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32());
         if (mainForm.ShowDialog(wa) != DialogResult.Cancel)
         {
           ProjectInfo[] toCheckout = mainForm.MarkedProjects;

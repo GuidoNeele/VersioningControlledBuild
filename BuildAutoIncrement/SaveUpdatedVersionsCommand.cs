@@ -62,10 +62,10 @@ namespace BuildAutoIncrement
       spl.ReloadSetupProjects();
 
       if (m_solutionBrowser.UpdateSummary.UpdatedItemsCount == 0)
-        NoUpdateForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd));
+        NoUpdateForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()));
 
       if (m_solutionBrowser.UpdateSummary.UpdatedItemsCount > 0 && ConfigurationPersister.Instance.Configuration.DisplayOptions.ShowSuccessDialog)
-        OperationSuccesForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd), m_solutionBrowser.UpdateSummary.SummaryItems);
+        OperationSuccesForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()), m_solutionBrowser.UpdateSummary.SummaryItems);
     }
   }
 }

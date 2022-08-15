@@ -60,7 +60,7 @@ namespace BuildAutoIncrement
       try
       {
         ConfigurationForm configurationForm = new ConfigurationForm();
-        if (configurationForm.ShowDialog(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd)) == DialogResult.OK)
+        if (configurationForm.ShowDialog(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32())) == DialogResult.OK)
         {
           ConfigurationPersister.Instance.Configuration = configurationForm.GetConfiguration();
           ConfigurationPersister.Instance.StoreConfiguration();
@@ -68,7 +68,7 @@ namespace BuildAutoIncrement
       }
       catch (Exception ex)
       {
-        ExceptionForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd), ex, "Error starting Versioning Controlled Build add-in");
+        ExceptionForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()), ex, "Error starting Versioning Controlled Build add-in");
       }
     }
   }

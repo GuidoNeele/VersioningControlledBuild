@@ -56,7 +56,7 @@ namespace BuildAutoIncrement
     {
       base.PreMenuItemCallback();
 
-      ListPrinter lp = new ListPrinter(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd));
+      ListPrinter lp = new ListPrinter(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()));
       lp.Print(string.Empty, m_solutionBrowser.SolutionName, m_solutionBrowser.ProjectInfoList);
     }
   }
