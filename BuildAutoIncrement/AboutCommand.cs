@@ -55,7 +55,7 @@ namespace BuildAutoIncrement
     {
       base.PreMenuItemCallback();
 
-      AboutBox.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd));
+      AboutBox.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()));
     }
   }
 }

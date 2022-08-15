@@ -52,7 +52,7 @@ namespace BuildAutoIncrement {
         public static extern int EnableWindow(int hWnd, bool bEnable);
         
         [DllImport("user32.dll")]
-        public static extern IntPtr GetDC(IntPtr hWnd);
+        public static extern IntPtr GetDC(IntPtr HWnd);
 
         [DllImport("user32.dll")]
         public static extern bool GetScrollInfo(IntPtr hwnd, int fnBar, ref SCROLLINFO lpsi);
@@ -82,7 +82,7 @@ namespace BuildAutoIncrement {
         public static extern int SetScrollInfo(IntPtr hwnd, int fnBar, [In] ref SCROLLINFO lpsi, bool fRedraw);
 
         [DllImport("user32.dll")] 
-        public static extern int UpdateWindow(IntPtr hwnd);
+        public static extern int UpdateWindow(IntPtr HWnd);
 
         [DllImport("user32.dll")] 
         public static extern int ValidateRect(IntPtr hwnd, ref RECT lpRect);

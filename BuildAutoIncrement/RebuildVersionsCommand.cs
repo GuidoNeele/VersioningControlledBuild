@@ -64,13 +64,13 @@ namespace BuildAutoIncrement
 
       bool runCommand = true;
       if (m_solutionBrowser.UpdateSummary.UpdatedItemsCount == 0)
-        runCommand = NoUpdateForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd)) == DialogResult.Yes;
+        runCommand = NoUpdateForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32())) == DialogResult.Yes;
 
       if (runCommand)
         m_devEnvApplicationObject.ExecuteCommand("Build.RebuildSolution", "");
 
       if (m_solutionBrowser.UpdateSummary.UpdatedItemsCount > 0 && ConfigurationPersister.Instance.Configuration.DisplayOptions.ShowSuccessDialog)
-        OperationSuccesForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd), m_solutionBrowser.UpdateSummary.SummaryItems);
+        OperationSuccesForm.Show(new WindowAdapter(m_devEnvApplicationObject.MainWindow.HWnd.ToInt32()), m_solutionBrowser.UpdateSummary.SummaryItems);
     }
   }
 }

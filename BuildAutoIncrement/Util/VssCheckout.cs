@@ -107,7 +107,7 @@ namespace BuildAutoIncrement
       {
         //Try checking files out via 
         if (!CheckOutFilesThroughShell(filesToCheckOut))
-          if (CheckOutErrorDialog.Show(new WindowAdapter(m_environment.MainWindow.HWnd), (string[])filesNotCheckedOut.ToArray(typeof(string))) == DialogResult.No)
+          if (CheckOutErrorDialog.Show(new WindowAdapter(m_environment.MainWindow.HWnd.ToInt32()), (string[])filesNotCheckedOut.ToArray(typeof(string))) == DialogResult.No)
             throw new UserCancelledException();
       }
     }
